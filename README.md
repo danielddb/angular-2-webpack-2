@@ -12,7 +12,7 @@ Make sure you have Node version >= 5.0 and NPM >= 3.
 
 ```bash
 # Clone the repo
-git clone <REPO-NAME>
+git clone https://github.com/danielddb/angular-2-webpack-2.git
 
 # install the repo with npm 
 npm install
