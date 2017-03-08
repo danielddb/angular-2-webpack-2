@@ -1,7 +1,7 @@
 # Technologies
 
 * Module bundling - Webpack 2
-* JS Framework - Angular 2
+* JS Framework & State Management - Angular 2 & ngrx/store
 * Style - Stylus
 * E2E Tests - Protractor
 * Unit Tests - Karma & Jasmine
