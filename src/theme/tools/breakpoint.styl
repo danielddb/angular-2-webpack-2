@@ -1,0 +1,7 @@
+breakpoint(breakpoint, breakpointsHash = $breakpoints)
+    if breakpoint in breakpointsHash
+        @media only screen and (min-width: breakpointsHash[breakpoint])
+            {block}
+    else
+        @media only screen and (min-width: breakpoint)
+            {block}

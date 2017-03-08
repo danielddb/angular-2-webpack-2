@@ -1,0 +1,6 @@
+-color(palette = '', name = 'base', palettes = $palette)
+    if palette in palettes and palette is a 'string' and palettes is a 'object'
+        p = palettes[palette]
+        p[name]
+    else
+        error('expected palettes to be a ' + typeof(palettes) + ', palette to be a ' + typeof(palette) + ' and name to be a ' + typeof(name))

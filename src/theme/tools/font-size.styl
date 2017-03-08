@@ -1,0 +1,5 @@
+-font-size(size = 'base', sizes = $font-sizes)
+    if size in sizes and size is a 'string' and sizes is a 'object'
+        sizes[size]
+    else
+        error('expected size to be a ' + typeof(size) + ' and sizesHash to be a ' + typeof(sizes))

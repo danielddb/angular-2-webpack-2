@@ -1,0 +1,5 @@
+-line-height(type = 'base', line-heights = $line-heights)
+    if type in line-heights and type is a 'string' and line-heights is a 'object'
+        line-heights[type]
+    else
+        error('expected type to be a ' + typeof(type) + ' and line-heights to be a ' + typeof(line-heights))
