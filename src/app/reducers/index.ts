@@ -1,6 +1,6 @@
-import { combineReducers, ActionReducer } from '@ngrx/store';
-import { compose } from '@ngrx/core/compose';
-import * as fromRouter from '@ngrx/router-store';
+import { combineReducers, ActionReducer } from '@ngrx/store'
+import { compose } from '@ngrx/core/compose'
+import * as fromRouter from '@ngrx/router-store'
 
 /**
  * Every reducer module's default export is the reducer function itself. In
@@ -8,21 +8,21 @@ import * as fromRouter from '@ngrx/router-store';
  * the state of the reducer plus any selector functions. The `* as`
  * notation packages up all of the exports into a single object.
  */
-import * as fromCounter from './counter.reducer';
+import * as fromCounter from './counter.reducer'
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
  * our top level state interface is just a map of keys to inner state types.
  */
 export interface State {
-    counter: fromCounter.State;
-    router: fromRouter.RouterState;
+  counter: fromCounter.State
+  router: fromRouter.RouterState
 };
 
 const reducers = {
-    counter: fromCounter.reducer,
-    router: fromRouter.routerReducer
-};
+  counter: fromCounter.reducer,
+  router: fromRouter.routerReducer
+}
 
 /**
  * Because metareducers take a reducer function and return a new reducer,
@@ -31,14 +31,14 @@ const reducers = {
  * wrapping that in storeLogger. Remember that compose applies
  * the result from right to left.
  */
-export function reducer(state: any, action: any) {
-    let combinedRecucers: ActionReducer<State>;
-    
-    if (process.env.ENV == 'production') {
-        combinedRecucers = combineReducers(reducers);
-    } else {
-        combinedRecucers = compose(combineReducers)(reducers);
-    }
+export function reducer (state: any, action: any) {
+  let combinedRecucers: ActionReducer<State>
 
-    return combinedRecucers(state, action);
+  if (process.env.ENV === 'production') {
+    combinedRecucers = combineReducers(reducers)
+  } else {
+    combinedRecucers = compose(combineReducers)(reducers)
+  }
+
+  return combinedRecucers(state, action)
 }

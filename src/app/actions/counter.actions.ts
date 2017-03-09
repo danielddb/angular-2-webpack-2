@@ -1,30 +1,29 @@
-import { Action } from '@ngrx/store';
-import { actionType } from '../functions/action-type';
+import { Action } from '@ngrx/store'
+import { actionType } from '../functions/action-type'
 
 export const ActionTypes = {
   INCREMENT: actionType('COUNTER_INCREMENT'),
   DECREMENT: actionType('COUNTER_DECREMENT'),
   RESET: actionType('COUNTER_RESET')
-};
+}
 
 export class Increment implements Action {
-  type = ActionTypes.INCREMENT;
+  type = ActionTypes.INCREMENT
 
-  constructor(public payload: string) { }
+  constructor (public payload: string) { }
 }
 
 export class Decrement implements Action {
-  type = ActionTypes.DECREMENT;
+  type = ActionTypes.DECREMENT
 
-  constructor(public payload: string) { }
+  constructor (public payload: string) { }
 }
 
 export class Reset implements Action {
-  type = ActionTypes.RESET;
+  type = ActionTypes.RESET
 
-  constructor(public payload: string) { }
+  constructor (public payload: string) { }
 }
-
 
 /**
  * Export a type alias of all actions in this action group
