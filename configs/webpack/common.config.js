@@ -52,7 +52,7 @@ module.exports = {
             {
                 test: /\.styl$/,
                 exclude: path.resolve(__dirname, '../../src/app'),
-                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap!stylus-loader' })
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?sourceMap!stylus-loader' })
             },
             {
                 test: /\.html$/,

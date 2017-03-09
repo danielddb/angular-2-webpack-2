@@ -7,7 +7,7 @@ module.exports = function(router) {
 
   // define the about route
   router.get('/test-route', function (req, res) {
-    res.send('About birds')
+    res.json({ test: 'Testing!' });
   });
 
   return router;
