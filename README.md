@@ -1,14 +1,15 @@
 # Technologies
 
-* Module bundling - Webpack 2
-* JS Framework & State Management - Angular 2 & ngrx/store
-* Style - Stylus
-* E2E Tests - Protractor
-* Unit Tests - Karma & Jasmine
+* Module bundling - [Webpack 2](https://webpack.js.org/)
+* JS Framework & State Management - [Angular 2](https://angular.io/) & [ngrx/store](https://github.com/ngrx/store)
+* JS Linting - [TS Lint](https://palantir.github.io/tslint/) using [JavaScript Standard Style](http://standardjs.com/) rules 
+* Style - [Stylus](http://stylus-lang.com/)
+* E2E Tests - [Protractor](http://www.protractortest.org/)
+* Unit Tests - [Karma](https://karma-runner.github.io/) & [Jasmine](https://jasmine.github.io/)
 
 # Quick start
 
-Make sure you have [Node](https://nodejs.org/) version >= 5.0 and [Yarn](https://yarnpkg.com/en/docs/install#windows-tab]) installed on your machine.
+Make sure you have [Node](https://nodejs.org/) version >= 5.0 and [Yarn](https://yarnpkg.com/en/docs/install#windows-tab]) >= 0.21 installed on your machine.
 
 ```bash
 # Clone the repo
@@ -25,7 +26,7 @@ yarn start
 
 # Main commands
 
-`yarn start` to start up webpack dev server and mock server on (proxied from http://localhost:3000 to http://localhost:8080/mocks) for mock API data.
+`yarn start` to start up webpack dev server and the mock server (proxied from http://localhost:3000 to http://localhost:8080/mocks).
 
 `yarn run start:prod` to build webpack assets in production mode and start up http-server.
 
