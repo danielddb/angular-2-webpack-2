@@ -1,7 +1,7 @@
 import { combineReducers, ActionReducer } from '@ngrx/store'
 import { compose } from '@ngrx/core/compose'
 import * as fromRouter from '@ngrx/router-store'
-import { storeLogger } from "ngrx-store-logger"
+import { storeLogger } from 'ngrx-store-logger'
 
 /**
  * Every reducer module's default export is the reducer function itself. In
