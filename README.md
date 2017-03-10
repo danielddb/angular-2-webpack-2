@@ -27,7 +27,7 @@ Clone the repo.
 
 # Main commands
 
-`npm start` to start up webpack dev server and json-server on (proxied from http://localhost:3000 to http://localhost:8080/mock-api) for mock API data.
+`npm start` to start up webpack dev server and mock server on (proxied from http://localhost:3000 to http://localhost:8080/mocks) for mock API data.
 
 `npm run start:prod` to build webpack assets in production mode and start up http-server.
 
