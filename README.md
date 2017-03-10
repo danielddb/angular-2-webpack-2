@@ -8,7 +8,7 @@
 
 # Quick start
 
-Make sure you have [Node](https://nodejs.org/) version >= 5.0 and [Yarn](https://yarnpkg.com/en/docs/install#windows-tab]).
+Make sure you have [Node](https://nodejs.org/) version >= 5.0 and [Yarn](https://yarnpkg.com/en/docs/install#windows-tab]) installed on your machine.
 
 ```bash
 # Clone the repo
