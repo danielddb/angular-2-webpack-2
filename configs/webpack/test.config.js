@@ -14,13 +14,14 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
+                exclude: /\.e2e\.ts$/,
                 enforce: 'pre',
                 loader: 'tslint-loader',
                 options: tsLintConfig
             },
             {
                 test: /\.ts$/,
-                exclude: [/\.(spec|e2e)\.ts$/],
+                exclude: /\.e2e\.ts$/,
                 loaders: [
                     {
                         loader: 'awesome-typescript-loader',
