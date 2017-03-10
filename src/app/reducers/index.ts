@@ -1,6 +1,7 @@
 import { combineReducers, ActionReducer } from '@ngrx/store'
 import { compose } from '@ngrx/core/compose'
 import * as fromRouter from '@ngrx/router-store'
+import { storeLogger } from "ngrx-store-logger"
 
 /**
  * Every reducer module's default export is the reducer function itself. In
@@ -37,7 +38,7 @@ export function reducer (state: any, action: any) {
   if (process.env.ENV === 'production') {
     combinedRecucers = combineReducers(reducers)
   } else {
-    combinedRecucers = compose(combineReducers)(reducers)
+    combinedRecucers = compose(storeLogger(), combineReducers)(reducers)
   }
 
   return combinedRecucers(state, action)
