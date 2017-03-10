@@ -1,12 +1,9 @@
+const testMiddleware = require('../middlewares/test-middleware');
+
 module.exports = function(router) {
-  // middleware that is specific to this router
-  router.use(function timeLog (req, res, next) {
-    console.log('Time: ', Date.now())
-    next()
-  })
 
   // define the about route
-  router.get('/test-route', function (req, res) {
+  router.get('/test-route', testMiddleware, function (req, res) {
     res.json({ test: 'Testing!' });
   });
 

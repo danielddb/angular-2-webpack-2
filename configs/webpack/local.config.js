@@ -22,10 +22,10 @@ module.exports = webpackMerge(commonConfig, {
     devServer: {
         stats: 'minimal',
         proxy: [{
-            context: '/mock-api',
+            context: '/mocks',
             target: 'http://localhost:3000',
             pathRewrite: {
-                '^/mock-api' : '/'
+                '^/mocks' : '/'
             }
         }],
         historyApiFallback: true
