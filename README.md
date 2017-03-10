@@ -1,7 +1,8 @@
 # Technologies
 
 * Module bundling - [Webpack 2](https://webpack.js.org/)
-* JS Framework & State Management - [Angular 2](https://angular.io/) & [ngrx/store](https://github.com/ngrx/store)
+* JS Framework - [Angular 2](https://angular.io/)
+* JS State Management - [@ngrx/store](https://github.com/ngrx/store) (based on Redux) and [@ngrx/effects] (Side effect model for @ngrx/store)
 * JS Linting - [TS Lint](https://palantir.github.io/tslint/) using [JavaScript Standard Style](http://standardjs.com/) rules 
 * Style - [Stylus](http://stylus-lang.com/)
 * E2E Tests - [Protractor](http://www.protractortest.org/)
