@@ -14,3 +14,6 @@ import '@ngrx/core'
 import '@ngrx/store'
 import '@ngrx/router-store'
 import '@ngrx/effects'
+
+import 'ng2-charts'
+import 'chart.js'
