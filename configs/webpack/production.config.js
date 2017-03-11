@@ -26,27 +26,29 @@ module.exports = webpackMerge.smart(commonConfig, {
   },
 
   module: {
-    rules: [{
-      test: /\.ts$/,
-      exclude: [/\.(spec|e2e)\.ts$/],
-      use: [{
-          loader: 'angular-router-loader',
-          options: {
-            aot: true,
-            genDir: 'aot'
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: [/\.(spec|e2e)\.ts$/],
+        use: [{
+            loader: 'angular-router-loader',
+            options: {
+              aot: true,
+              genDir: 'aot'
+            }
+          },
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              configFileName: helpers.root('tsconfig-aot.json')
+            }
+          },
+          {
+            loader: 'angular2-template-loader'
           }
-        },
-        {
-          loader: 'awesome-typescript-loader',
-          options: {
-            configFileName: helpers.root('tsconfig-aot.json')
-          }
-        },
-        {
-          loader: 'angular2-template-loader'
-        }
-      ]
-    }]
+        ]
+      }
+    ]
   },
 
   plugins: [

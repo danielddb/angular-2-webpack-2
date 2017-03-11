@@ -8,27 +8,47 @@ module.exports = {
   devtool: 'inline-source-map',
 
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
+    modules: [helpers.root('src'), 'node_modules']
   },
 
   module: {
-    rules: [{
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
+        exclude: [
+          // these packages have problems with their sourcemaps
+          helpers.root('node_modules/rxjs'),
+          helpers.root('node_modules/@angular')
+        ]
+      },
+      {
         test: /\.ts$/,
-        exclude: [/\.(spec|e2e)\.ts$/],
+        exclude: [/\.e2e\.ts$/],
         enforce: 'pre',
         loader: 'tslint-loader',
         options: tsLintConfig
       },
       {
         test: /\.ts$/,
-        exclude: [/\.(spec|e2e)\.ts$/],
+        exclude: [/\.e2e\.ts$/],
         use: [{
             loader: 'angular-router-loader'
           },
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: helpers.root('tsconfig.json')
+              sourceMap: false,
+                inlineSourceMap: true,
+                compilerOptions: {
+
+                  // Remove TypeScript helpers to be injected
+                  // below by DefinePlugin
+                  removeComments: true
+
+                }
             }
           },
           {
@@ -53,6 +73,16 @@ module.exports = {
       {
         test: /\.html$/,
         loader: 'html-loader'
+      },
+      {
+        enforce: 'post',
+        test: /\.(js|ts)$/,
+        loader: 'istanbul-instrumenter-loader',
+        include: helpers.root('src'),
+        exclude: [
+          /\.(e2e|spec)\.ts$/,
+          /node_modules/
+        ]
       }
     ]
   },

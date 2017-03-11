@@ -21,7 +21,8 @@ module.exports = {
   },
 
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.ts$/,
         exclude: [/\.(spec|e2e)\.ts$/],
         enforce: 'pre',
@@ -31,14 +32,12 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: [/\.(spec|e2e)\.ts$/],
-        use: [{
+        use: [
+          {
             loader: 'angular-router-loader'
           },
           {
-            loader: 'awesome-typescript-loader',
-            options: {
-              configFileName: helpers.root('tsconfig.json')
-            }
+            loader: 'awesome-typescript-loader'
           },
           {
             loader: 'angular2-template-loader'

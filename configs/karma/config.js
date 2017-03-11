@@ -1,17 +1,28 @@
-const webpackConfig = require('../webpack/test.config');
+const webpackConfig = require('../webpack/test.config')
+const helpers = require('../helpers')
 
 module.exports = function (config) {
   const _config = {
-    basePath: '',
+    basePath: helpers.root(),
 
     frameworks: ['jasmine'],
 
     files: [
-      { pattern: './test-shim.js', watched: false }
+      { pattern: './configs/karma/test-shim.js', watched: false }
     ],
 
     preprocessors: {
-      './test-shim.js': ['webpack', 'sourcemap']
+      './configs/karma/test-shim.js': ['coverage', 'webpack', 'sourcemap']
+    },
+
+    coverageReporter: {
+      type: 'in-memory'
+    },
+
+    remapCoverageReporter: {
+      'text-summary': null,
+      json: './coverage/coverage.json',
+      html: './coverage/html'
     },
 
     webpack: webpackConfig,
@@ -24,12 +35,18 @@ module.exports = function (config) {
       noInfo: true
     },
 
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage', 'remap-coverage'],
+
     port: 9876,
+
     colors: true,
+
     logLevel: config.LOG_INFO,
+
     autoWatch: false,
+
     browsers: ['Chrome'],
+
     singleRun: true
   };
 
