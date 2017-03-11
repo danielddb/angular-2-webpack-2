@@ -11,6 +11,7 @@ import { reducer } from './reducers'
 import { AppComponent } from './app.component'
 import { CounterComponent } from './components'
 import { LoginContainer } from './containers'
+import '@/theme/styles.styl'
 
 @NgModule({
   imports: [

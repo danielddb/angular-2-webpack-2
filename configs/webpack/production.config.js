@@ -40,7 +40,7 @@ module.exports = webpackMerge.smart(commonConfig, {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: helpers.root('tsconfig-aot.json')
+              configFileName: 'tsconfig.aot.json'
             }
           },
           {
@@ -77,7 +77,7 @@ module.exports = webpackMerge.smart(commonConfig, {
     }),
     new ngcWebpack.NgcWebpackPlugin({
       disabled: false,
-      tsConfig: helpers.root('tsconfig-aot.json')
+      tsConfig: helpers.root('tsconfig.aot.json')
     }),
   ]
 })

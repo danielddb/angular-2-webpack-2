@@ -2,14 +2,14 @@ const webpackMerge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 
+const helpers = require('../helpers')
 const commonConfig = require('./common.config')
-
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'cheap-module-eval-source-map',
 
   output: {
-    path: path.resolve(__dirname, '../../dist'),
+    path: helpers.root('dist'),
     publicPath: '/',
     filename: '[name].js',
     chunkFilename: '[id].chunk.js'

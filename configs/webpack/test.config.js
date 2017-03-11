@@ -8,6 +8,9 @@ module.exports = {
   devtool: 'inline-source-map',
 
   resolve: {
+    alias: {
+      '@': helpers.root('src')
+    },
     extensions: ['.ts', '.js'],
     modules: [helpers.root('src'), 'node_modules']
   },

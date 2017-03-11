@@ -17,7 +17,8 @@ module.exports = {
     alias: {
       '@': helpers.root('src')
     },
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
+    modules: [helpers.root('src'), 'node_modules']
   },
 
   module: {

@@ -8,7 +8,7 @@ exports.config = {
    * A base URL for your application under test. Calls to protractor.get()
    * with relative paths will be resolved against this URL (via url.resolve)
    */
-  baseUrl: 'http://localhost:9000/',
+  baseUrl: 'http://localhost:9001/',
 
   specs: [helpers.root('src/**/**.e2e.ts')],
 
