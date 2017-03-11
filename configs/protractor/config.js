@@ -1,5 +1,6 @@
-const path = require('path');
-require('ts-node/register');
+const path = require('path')
+const helpers = require('../helpers')
+require('ts-node/register')
 
 exports.config = {
 
@@ -7,9 +8,9 @@ exports.config = {
    * A base URL for your application under test. Calls to protractor.get()
    * with relative paths will be resolved against this URL (via url.resolve)
    */
-  baseUrl: 'http://localhost:8080/',
+  baseUrl: 'http://localhost:9000/',
 
-  specs: [path.resolve(__dirname, '../../src/**/**.e2e.ts')],
+  specs: [helpers.root('src/**/**.e2e.ts')],
 
   exclude: [],
 

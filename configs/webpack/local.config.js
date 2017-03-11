@@ -1,33 +1,34 @@
-const webpackMerge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
+const webpackMerge = require('webpack-merge')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
 
-const commonConfig = require('./common.config');
+const commonConfig = require('./common.config')
 
 
 module.exports = webpackMerge(commonConfig, {
-    devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
 
-    output: {
-        path: path.resolve(__dirname, '../../dist'),
-        publicPath: 'http://localhost:8080/',
-        filename: '[name].js',
-        chunkFilename: '[id].chunk.js'
-    },
+  output: {
+    path: path.resolve(__dirname, '../../dist'),
+    publicPath: '/',
+    filename: '[name].js',
+    chunkFilename: '[id].chunk.js'
+  },
 
-    plugins: [
-        new ExtractTextPlugin('[name].css')
-    ],
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
 
-    devServer: {
-        stats: 'minimal',
-        proxy: [{
-            context: '/mocks',
-            target: 'http://localhost:3000',
-            pathRewrite: {
-                '^/mocks' : '/'
-            }
-        }],
-        historyApiFallback: true
-    }
-});
+  devServer: {
+    port: 9000,
+    stats: 'minimal',
+    proxy: [{
+      context: '/mocks',
+      target: 'http://localhost:9010',
+      pathRewrite: {
+        '^/mocks': '/'
+      }
+    }],
+    historyApiFallback: true
+  }
+})
